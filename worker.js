@@ -6,11 +6,11 @@ addEventListener('fetch',
 async function handleRequest(request) {
 	const url = new URL(request.url);
 
-	// 从请求路径中提取目标 URL，请求转发时加上 QueryParam和hashParam
-	let actualUrlStr = url.href.replace(url.origin, '') + url.search + url.hash;
+	// 从请求路径中提取目标 URL，请求转发时加上 QueryParam和hashParam,适配反代网址带查询参数
+	let actualUrlStr = url.pathname + url.search + url.hash;
 	if (actualUrlStr.startsWith('/')) {
-		actualUrlStr = actualUrlStr.substring(1);
-	  }
+  	actualUrlStr = actualUrlStr.substring(1);
+	}
 	actualUrlStr = decodeURIComponent(actualUrlStr);
 
 	if (!actualUrlStr) {

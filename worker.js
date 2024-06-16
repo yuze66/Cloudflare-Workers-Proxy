@@ -119,7 +119,7 @@ async function handleRequest(request) {
 		      <div id="container">
 		        <h1>${websiteTitle}</h1>
 		        <div class="form-group">
-		          <label for="url">输入需要代理的网站:</label>
+		          <label for="url">输入需要访问的网站:</label>
 		          <input type="text" id="url" name="url" placeholder="例如：https://github.com/" />
 		          <input type="button" id="submit" value="进入代理" onclick="redirectToProxy()" />
 		        </div>
